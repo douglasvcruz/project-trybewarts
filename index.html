@@ -36,8 +36,8 @@
         </section>
         <section class="email-house-container">
           <input id="input-email" type="email" placeholder="Email" class="input-form-container-left">
-          Casa:
           <select name="house-select" id="house">
+            <option id="casa" value="casa" hidden disabled selected>Casa</option>
             <option id="gitnoria-house" value="Gitnória">Gitnória</option>
             <option id="reactpuff-house" value="Reactpuff">Reactpuff</option>
             <option id="corvinode-house" value="Corvinode">Corvinode</option>
@@ -63,22 +63,22 @@
             <label id="label-content" class="label-title">Qual conteúdo você está com mais vontade de aprender?</label>
             <section class="labels-right-container">
               <label for="hofs" class="element-right-label">
-                <input type="checkbox" class="subject" value="HoFs" id="hofs">HoFs
+                <input type="checkbox" class="subject" value="HoFs" id="hofs"> HoFs
               </label>
               <label for="jest" class="element-right-label">
-                <input type="checkbox" class="subject" value="Jest" id="jest">Jest
+                <input type="checkbox" class="subject" value="Jest" id="jest"> Jest
               </label>
               <label for="promises" class="element-right-label">
-                <input type="checkbox" class="subject" value="Promises" id="promises">Promises
+                <input type="checkbox" class="subject" value="Promises" id="promises"> Promises
               </label>
               <label for="react" class="element-right-label">
-                <input type="checkbox" class="subject" value="React" id="react">React
+                <input type="checkbox" class="subject" value="React" id="react"> React
               </label>
               <label for="sql" class="element-right-label">
-                <input type="checkbox" class="subject" value="SQL" id="sql">SQL
+                <input type="checkbox" class="subject" value="SQL" id="sql"> SQL
               </label>
               <label for="python" class="element-right-label">
-                <input type="checkbox" class="subject" value="Python" id="python">Python
+                <input type="checkbox" class="subject" value="Python" id="python"> Python
               </label>
             </section>
           </section>
@@ -109,7 +109,7 @@
         </section>
         <section class="textarea-container">
           <label class="textarea">Deixe seu comentário:
-            <textarea maxlength="500" id="textarea" oninput="contar()"></textarea>
+            <textarea maxlength="500" id="textarea" class="counter" oninput="contar()"></textarea>
             <div id="counter"></div>
           </label>
         </section>
