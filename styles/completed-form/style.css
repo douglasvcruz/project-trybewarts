@@ -1,0 +1,10 @@
+#form-data {
+  display: none;
+  flex-direction: column;
+  text-align: start;
+  margin-left: 15px;
+}
+
+#form-data p {
+  margin: 15px;
+}

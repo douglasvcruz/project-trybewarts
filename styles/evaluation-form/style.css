@@ -1,0 +1,92 @@
+main form {
+  display: flex;
+  width: 675px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.principal-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  margin-bottom: 10px;
+}
+
+.principal-container input , .principal-container select {
+  width: 35%;
+  margin: 5px;
+  padding: 15px;
+  border: none;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.secondary-container {
+  display: flex;
+  width: 70%;
+  align-self: center;
+}
+
+.family-container , .stack-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 50%;
+}
+
+.stack-container p , .family-container p {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.stack-container label {
+  width: inherit;
+}
+
+.stack-container label , .family-container label {
+  margin-bottom: 10px;
+}
+
+.available-container {
+  justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 10px;
+  text-align: center;
+  align-self: center;
+}
+
+.available-container input {
+  margin-right: 10px;
+}
+
+.available-container p {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#submit-btn {
+  background-color: rgb(114, 41, 187);
+  color: white;
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+#textarea {
+  width: 100%;
+  height: 150px;
+}
+
+#casa {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+hr {
+  width: 80%;
+  margin: 15px 0;
+}

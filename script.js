@@ -1,61 +1,69 @@
-const buttonForm = document.getElementById('button-form-validate');
-
-function validateEmailPassword() {
-  const inputEmail = document.getElementById('input-email-loguin').value;
-  const inputPassword = document.getElementById('input-password').value;
-  if (inputEmail === 'tryber@teste.com' && inputPassword === '123456') {
-    return window.alert('Olá, Tryber!');
-  } return window.alert('Email ou senha inválidos.');
+function validateEmailAndPassword() {
+  const element = document.getElementsByClassName('input-form');
+  const inputEmail = element[0].value;
+  const inputPassword = element[1].value;
+  if (inputEmail === 'cbdouglasvirissimo@hotmail.com' && inputPassword === '123456') {
+    return window.alert('Olá, Douglas!');
+  }
+  return window.alert('Email ou senha inválidos.');
 }
 
-buttonForm.addEventListener('click', validateEmailPassword);
-
-function desableButton() {
-  const submitBtn = document.getElementById('submit-btn');
-  const inputCheckbox = document.getElementById('agreement');
-  if (inputCheckbox.checked) {
-    submitBtn.disabled = false;
-  } else submitBtn.disabled = true;
+function disableButton() {
+  const submitButton = document.getElementById('submit-btn');
+  const checkBoxAgreement = document.getElementById('agreement');
+  submitButton.disabled = !checkBoxAgreement.checked;
 }
 
 function insertValues() {
-  document.querySelector('#form-data p:nth-of-type(1)').innerText = `Nome:
-  ${document.getElementById('input-name').value}
-  ${document.getElementById('input-lastname').value}`;
-  document.querySelector('#form-data p:nth-of-type(2)').innerText = `Email:
-  ${document.getElementById('input-email').value}`;
-  document.querySelector('#form-data p:nth-of-type(3)').innerText = `Casa:
-  ${document.getElementById('house').options[document.getElementById('house').selectedIndex].value}
-  `;
-  document.querySelector('#form-data p:nth-of-type(4)').innerText = `Família:
-  ${document.querySelector('input[name="family"]:checked').value}`;
+  const name = document.querySelector('#form-data p:nth-of-type(1)');
+  const email = document.querySelector('#form-data p:nth-of-type(2)');
+  const house = document.querySelector('#form-data p:nth-of-type(3)');
+  const family = document.querySelector('#form-data p:nth-of-type(4)');
+  const element = document.getElementsByClassName('principal-container')[0]
+    .children;
+  const inputFirstName = element[0];
+  const inputLastName = element[1];
+  const inputEmail = element[2];
+  const inputHouse = element[3];
+  const inputFamily = document.querySelector('input[name="family"]:checked');
+
+  name.innerText = `Nome: ${inputFirstName.value} ${inputLastName.value}`;
+  email.innerText = `Email: ${inputEmail.value}`;
+  house.innerText = `Casa: ${
+    inputHouse.options[inputHouse.selectedIndex].value
+  }`;
+  family.innerText = `Família: ${inputFamily.value}`;
 }
 
-function information(event) {
+function completedForm(event) {
   event.preventDefault();
+  const schoolSubjects = document.querySelector('#form-data p:nth-of-type(5)');
+  const evaluation = document.querySelector('#form-data p:nth-of-type(6)');
+  const observations = document.querySelector('#form-data p:nth-of-type(7)');
+  const inputCheckBox = document.querySelector('input[name="rate"]:checked');
+  const inputTextArea = document.getElementById('textarea');
+
   document.getElementById('evaluation-form').style.display = 'none';
   document.getElementById('form-data').style.display = 'flex';
   insertValues();
-  const checkedBox = document.querySelectorAll('.subject');
+  const checkBox = document.querySelectorAll('.subject');
   const listaMaterias = [];
-  for (let index = 0; index < checkedBox.length; index += 1) {
-    if (checkedBox[index].checked) {
-      listaMaterias.push(` ${checkedBox[index].value}`);
-    }
+  for (let index = 0; index < checkBox.length; index += 1) {
+    if (checkBox[index].checked) listaMaterias.push(` ${checkBox[index].value}`);
   }
-  document.querySelector('#form-data p:nth-of-type(5)').innerText = `Matérias: ${listaMaterias}`;
-  document.querySelector('#form-data p:nth-of-type(6)').innerText = `Avaliação:
-  ${document.querySelector('input[name="rate"]:checked').value}`;
-  document.querySelector('#form-data p:nth-of-type(7)').innerText = `Observações:
-  ${document.getElementById('textarea').value}`;
+  schoolSubjects.innerText = `Matérias: ${listaMaterias}`;
+  evaluation.innerText = `Avaliação: ${inputCheckBox.value}`;
+  observations.innerText = `Observações: ${inputTextArea.value}`;
 }
 
-document.getElementById('submit-btn').addEventListener('click', information);
-document.getElementById('agreement').addEventListener('click', desableButton);
-
-function contar() {
+function reduceTextAreaCountNumber() {
   const area = document.getElementById('textarea').value;
-  document.getElementById('counter').innerHTML = 500 - area.length;
+  const counter = document.getElementById('counter');
+  counter.innerHTML = 500 - area.length;
 }
 
-contar();
+reduceTextAreaCountNumber();
+
+document.querySelectorAll('button')[0].addEventListener('click', validateEmailAndPassword);
+document.getElementById('submit-btn').addEventListener('click', completedForm);
+document.getElementById('agreement').addEventListener('click', disableButton);

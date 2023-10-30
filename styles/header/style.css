@@ -1,0 +1,41 @@
+header {
+  display: flex;
+  background-color: rgb(50, 167, 145);
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+header form {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 90px;
+}
+
+header img {
+  height: 80%;
+  margin: 35px;
+}
+
+header h1 {
+  color: white;
+  font-size: 3rem;
+  align-self: center;
+}
+
+header button {
+  width: 30%;
+  background-color: rgb(114, 41, 187);
+  color: white;
+  border-radius: 9px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+.input-form {
+  width: 30%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
